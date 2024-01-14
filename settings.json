@@ -1,88 +1,88 @@
 {
-    "github": {
-        "branch": "main",
-        "automaticallyMergePR": false,
-        "tokenPath": "%configDir%/plugins/%pluginID%/env",
-        "api": {
-            "tiersForApi": "Github Free/Pro/Team (default)",
-            "hostname": ""
-        },
-        "workflow": {
-            "commitMessage": "[PUBLISHER] Merge",
-            "name": ""
-        },
-        "verifiedRepo": true
+  "github": {
+    "branch": "main",
+    "automaticallyMergePR": true,
+    "tokenPath": "%configDir%/plugins/%pluginID%/env",
+    "api": {
+      "tiersForApi": "Github Free/Pro/Team (default)",
+      "hostname": ""
     },
-    "upload": {
-        "behavior": "yaml",
-        "defaultName": "content/posts",
-        "rootFolder": "content",
-        "yamlFolderKey": "dir",
-        "frontmatterTitle": {
-            "enable": false,
-            "key": "title"
-        },
-        "replaceTitle": [],
-        "replacePath": [],
-        "autoclean": {
-            "enable": false,
-            "excluded": []
-        },
-        "folderNote": {
-            "enable": false,
-            "rename": "index.md",
-            "addTitle": {
-                "enable": false,
-                "key": "title"
-            }
-        },
-        "metadataExtractorPath": ""
+    "workflow": {
+      "commitMessage": "[PUBLISHER] Merge",
+      "name": ""
     },
-    "conversion": {
-        "hardbreak": false,
-        "dataview": true,
-        "censorText": [
-            {
-                "entry": "/\\]\\((.+?)\\.md/",
-                "replace": "{{< relref \"$&\" >}}",
-                "flags": "",
-                "after": true,
-                "inCodeBlocks": false
-            },
-            {
-                "entry": "/cover\\.image/",
-                "replace": "cover:\\n    image",
-                "flags": "",
-                "after": false
-            },
-            {
-                "entry": "/\\!\\[\\[([^/]+?)\\.(png|jpg|jpeg|webp|gif)\\|?([^\\|]*?)\\]\\]/",
-                "replace": "{{< figure src=\"/images/$1.$2\" caption=\"$3\">}}",
-                "flags": "",
-                "after": false
-            }
-        ],
-        "tags": {
-            "inline": true,
-            "exclude": [],
-            "fields": []
-        },
-        "links": {
-            "internal": false,
-            "unshared": false,
-            "wiki": true,
-            "slugify": true
-        }
+    "verifiedRepo": true
+  },
+  "upload": {
+    "behavior": "yaml",
+    "defaultName": "content/posts",
+    "rootFolder": "content",
+    "yamlFolderKey": "dir",
+    "frontmatterTitle": {
+      "enable": false,
+      "key": "title"
     },
-    "embed": {
-        "attachments": true,
-        "overrideAttachments": [],
-        "keySendFile": [],
-        "notes": false,
-        "folder": "static/images",
-        "convertEmbedToLinks": "keep",
-        "charConvert": "->",
-        "forcePushAttachments": [],
-        "useObsidianFolder": false
+    "replaceTitle": [],
+    "replacePath": [],
+    "autoclean": {
+      "enable": false,
+      "excluded": []
+    },
+    "folderNote": {
+      "enable": false,
+      "rename": "index.md",
+      "addTitle": {
+        "enable": false,
+        "key": "title"
+      }
+    },
+    "metadataExtractorPath": ""
+  },
+  "conversion": {
+    "hardbreak": false,
+    "dataview": true,
+    "censorText": [
+      {
+        "entry": "/\\]\\((.+?)\\.md/",
+        "replace": "]({{< relref \"$1.md\" >}}",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": false
+      },
+      {
+        "entry": "/cover\\.image/",
+        "replace": "cover:\\n    image",
+        "flags": "",
+        "after": false
+      },
+      {
+        "entry": "/\\!\\[\\[([^/]+?)\\.(png|jpg|jpeg|webp|gif)\\|?([^\\|]*?)\\]\\]/",
+        "replace": "{{< figure src=\"/images/$1.$2\" caption=\"$3\">}}",
+        "flags": "",
+        "after": false
+      }
+    ],
+    "tags": {
+      "inline": true,
+      "exclude": [],
+      "fields": []
+    },
+    "links": {
+      "internal": false,
+      "unshared": false,
+      "wiki": true,
+      "slugify": true
     }
+  },
+  "embed": {
+    "attachments": true,
+    "overrideAttachments": [],
+    "keySendFile": [],
+    "notes": false,
+    "folder": "static/images",
+    "convertEmbedToLinks": "keep",
+    "charConvert": "->",
+    "forcePushAttachments": [],
+    "useObsidianFolder": false
+  }
 }
