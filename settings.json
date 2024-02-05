@@ -2,6 +2,10 @@
   "github": {
     "branch": "main",
     "automaticallyMergePR": true,
+    "dryRun": {
+      "enable": false,
+      "folderName": "github-publisher"
+    },
     "tokenPath": "%configDir%/plugins/%pluginID%/env",
     "api": {
       "tiersForApi": "Github Free/Pro/Team (default)",
@@ -43,7 +47,7 @@
     "dataview": true,
     "censorText": [
       {
-        "entry": "/\\]\\((.+?)\\.md/",
+        "entry": "/\\]\\(([^)\\.]+)\\.md/",
         "replace": "]({{< relref \"$1.md\" >}}",
         "flags": "",
         "after": true,
@@ -83,7 +87,7 @@
       "internal": false,
       "unshared": false,
       "wiki": true,
-      "slugify": true
+      "slugify": "lower"
     }
   },
   "embed": {
