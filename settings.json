@@ -60,19 +60,19 @@
         "after": false
       },
       {
-        "entry": "/\\]\\(([^/]+?)\\.(png|jpg|jpeg|webp|gif)/",
+        "entry": "/\\]\\(([^/\\)]+?)\\.(png|jpg|jpeg|webp|gif)/",
         "replace": "](/images/$1.$2",
         "flags": "",
         "after": true
       },
       {
-        "entry": "/\\!\\[\\[([^/]+?)\\.(png|jpg|jpeg|webp|gif)\\|(\\d+)(x(\\d+))?\\]\\]/",
+        "entry": "/\\!\\[\\[([^/\\]]+?)\\.(png|jpg|jpeg|webp|gif)\\|(\\d+)(x(\\d+))?\\]\\]/",
         "replace": "{{< figure src=\"/images/$1.$2\"  width=\"$3\" height=\"$5\">}}",
         "flags": "",
         "after": false
       },
       {
-        "entry": "/\\!\\[\\[([^/]+?)\\.(png|jpg|jpeg|webp|gif)\\|([^\\|]*?)(\\|(\\d+)(x(\\d+))?)?\\]\\]/",
+        "entry": "/\\!\\[\\[([^/\\]]+?)\\.(png|jpg|jpeg|webp|gif)\\|([^\\|]*?)(\\|(\\d+)(x(\\d+))?)?\\]\\]/",
         "replace": "{{< figure src=\"/images/$1.$2\" caption=\"$3\" width=\"$5\" height=\"$7\">}}",
         "flags": "",
         "after": false
